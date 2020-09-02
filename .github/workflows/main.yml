@@ -20,7 +20,6 @@ on:
       home:
         description: 'location'
         required: false
-
 jobs:
   say_hello:
     runs-on: ubuntu-latest
