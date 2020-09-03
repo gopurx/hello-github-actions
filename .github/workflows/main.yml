@@ -20,7 +20,7 @@ jobs:
         uses: ./action-a
         with:
           MY_NAME: ${{ github.event.inputs.name }}
-      - name: greet with name
+      - name: greet with name and location
         uses: ./action-a
         with:
-          MY_NAME: ${{ github.event.inputs.name }}${{ github.event.inputs.home }}
+          MY_NAME: ${{ github.event.inputs.name }}" from "${{ github.event.inputs.home }}
