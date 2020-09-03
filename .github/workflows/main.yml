@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
     inputs:
       name:
-        description: 'Person to greet'
+        description: 'Person to welcome'
         required: true
         default: 'Mona the Octocat'
       home:
@@ -15,5 +15,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - run: |
-        echo "Hello ${{ github.event.inputs.name }}!"
+        echo "Hi ${{ github.event.inputs.name }}!"
         echo "- in ${{ github.event.inputs.home }}!"
