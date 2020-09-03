@@ -14,7 +14,13 @@ jobs:
     name: Hello world action
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - uses: ./action-a
+      - name: checkout repo
+        uses: actions/checkout@v1
+      - name: greet with name
+        uses: ./action-a
         with:
           MY_NAME: ${{ github.event.inputs.name }}
+      - name: greet with name
+        uses: ./action-a
+        with:
+          MY_NAME: ${{ github.event.inputs.name }}${{ github.event.inputs.home }}
