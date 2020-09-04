@@ -28,6 +28,8 @@ jobs:
     name: deploy app
     runs-on: ubuntu-latest
     steps:
+    - name: checkout repo
+      uses: actions/checkout@v1
     - name: deploying app
       uses: ./action-a
       with:
