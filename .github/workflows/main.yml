@@ -24,6 +24,10 @@ jobs:
         uses: ./action-a
         with:
           MY_NAME: ${{ github.event.inputs.name }}" from "${{ github.event.inputs.home }}
+      - name: Get the output time
+        run: echo "The time was ${{ steps.hello.outputs.time }}"
+      - name: Get the output time
+        run: sh -c "echo cat /etc/hostname"
   deploy:
     name: deploy app
     runs-on: ubuntu-latest
@@ -34,3 +38,7 @@ jobs:
       uses: ./action-a
       with:
         MY_NAME: ${{ github.event.inputs.name }}" - deploying now"
+    - name: Get the output time
+      run: echo "The time was ${{ steps.hello.outputs.time }}"
+    - name: Get the output time
+      run: sh -c "echo cat /etc/hostname"
