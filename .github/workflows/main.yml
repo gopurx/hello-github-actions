@@ -24,3 +24,11 @@ jobs:
         uses: ./action-a
         with:
           MY_NAME: ${{ github.event.inputs.name }}" from "${{ github.event.inputs.home }}
+  deploy:
+    name: deploy app
+    runs-on: ubuntu-latest
+    steps:
+    - name: deploying app
+      uses: ./action-a
+      with:
+        MY_NAME: ${{ github.event.inputs.name }}" - deploying now"
