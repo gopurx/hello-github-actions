@@ -21,13 +21,14 @@ jobs:
         with:
           MY_NAME: ${{ github.event.inputs.name }}
       - name: greet with name and location
+        id: hello
         uses: ./action-a
         with:
           MY_NAME: ${{ github.event.inputs.name }}" from "${{ github.event.inputs.home }}
       - name: Get the output time
         run: echo "The time was ${{ steps.hello.outputs.time }}"
       - name: print hostname
-        run: sh -c "echo cat /etc/hostname"
+        run: cat /etc/hostname
   deploy:
     name: deploy app
     runs-on: ubuntu-latest
