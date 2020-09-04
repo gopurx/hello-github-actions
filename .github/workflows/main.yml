@@ -35,10 +35,11 @@ jobs:
     - name: checkout repo
       uses: actions/checkout@v1
     - name: deploying app
+      id: hello
       uses: ./action-a
       with:
         MY_NAME: ${{ github.event.inputs.name }}" - deploying now"
     - name: Get the output time
       run: echo "The time was ${{ steps.hello.outputs.time }}"
     - name: print hostname
-      run: sh -c "echo cat /etc/hostname"
+      run: cat /etc/hostname
